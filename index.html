@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet"> <!---cormorant garamond font stylesheet-->
+    <link rel="stylesheet" href="app/css/style.css" media="all"  type="text/css"><!---link to css stylesheet-->
+    <title>WEBSITE TITLE</title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="images/stockLogo.svg" alt="stock logo picture" class="s-logo"></a> <!---top left logo link to homepage-->
+        <div class="menu-btn"> <!---div to make ham btn when on mobile-->
+            <div class="menu-btn_lines"></div>
+        </div>
+        <ul class="nav-items"> <!---navigation bar-->
+            <li><a href="archive.html">ARCHIVE</a></li>
+            <li><a href="gallery.html">ART</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+        </ul>
+    </header>
+
+    <!---INTRO-->
+    <section class="intro">
+        <div class = "banner">
+            <img src="images/stockLogo.svg" alt="Homepage Logo" class="b-logo"> <!---STOCK LOGO GOES HERE-->
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis, pharetra ut feugiat et, porta eget eros. Praesent eget risus vitae mauris egestas ullamcorper. Sed placerat enim ultricies </p>
+        <a href="reader.html" class="button">Page 1</a>
+        <a id ="lastpg" href="reader-lastpg.html" class="button">Last Page</a>
+
+    </section>
+
+    <section class = "accordion">
+        <!---FIRST TAB--->
+        <div class="tab">
+            <input id="tab-1" type="checkbox">
+            <label for="tab-1">TITLE 1 <img class= 'tab-arrow' src="images/arrow.svg" alt="arrow"> </label>
+            <div class="tab-content">
+                <h2>YYYY/MM/DD</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis, pharetra ut feugiat et, porta eget eros. Praesent eget risus vitae mauris egestas ullamcorper. Sed placerat enim ultricies, viverra sem eu, congue leo. Proin hendrerit interdum purus. Integer convallis sapien metus, ac tristique magna convallis in. Pellentesque nec pulvinar dui. Praesent ac arcu vitae nunc porttitor rutrum ultricies eu quam. Aenean a urna at nunc</p>
+            </div>
+        </div>
+          
+          <!-- SECOND TAB -->
+        <div class="tab">
+            <input id="tab-2" type="checkbox">
+            <label for="tab-2">TITLE 2 <img class= 'tab-arrow' src="images/arrow.svg" alt="arrow"></label>
+            <div class="tab-content">
+                <div class="character-info">
+                    <img src="images/stockProfile.png" alt="stock profile picture">
+                    <div class="character-info-text">
+                        <h2>name 1</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis, pharetra ut feugiat et, porta eget eros. Praesent eget risus vitae mauris egestas ullamcorper. Sed placerat enim ultricies, viverra sem eu, congue leo. Proin hendrerit interdum purus. Integer convallis sapien metus, ac tristique magna convallis in. Pellentesque nec pulvinar dui. Praesent ac arcu vitae nunc porttitor rutrum ultricies eu quam.<br></p>
+                    </div>
+                </div>
+                <div class="character-info">
+                    <div class="character-info-text">
+                        <h2>name 2</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis, pharetra ut feugiat et, porta eget eros. Praesent eget risus vitae mauris egestas ullamcorper. Sed placerat enim ultricies, viverra sem eu, congue leo. Proin hendrerit interdum purus. Integer convallis sapien metus, ac tristique magna convallis in. Pellentesque nec pulvinar dui. Praesent ac arcu vitae nunc porttitor rutrum ultricies eu quam. </p>
+                    </div>
+                    <img src="images/stockProfile.png" alt="stock profile picture">
+                </div>
+                <div class="character-info">
+                    <img src="images/stockProfile.png" alt="stock profile picture">
+                    <div class="character-info-text">
+                        <h2>name 3</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis, pharetra ut feugiat et, porta eget eros. Praesent eget risus vitae mauris egestas ullamcorper. Sed placerat enim ultricies, viverra sem eu, congue leo. Proin hendrerit interdum purus. Integer convallis sapien metus, ac tristique magna convallis in. Pellentesque nec pulvinar dui. Praesent ac arcu vitae nunc porttitor rutrum ultricies eu quam.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+          <!-- THIRD TAB -->
+        <div class="tab">
+            <input id="tab-3" type="checkbox">
+            <label for="tab-3">CONTACT <img class= 'tab-arrow' src="images/arrow.svg" alt="arrow"> </label>
+            <div class="tab-content">
+                <!---<?php
+                if ($message_sent): 
+                ?>
+                <h2>Thank you for your message!</h2>---> 
+                
+                <p>Send me your feedback, queries, and thoughts!</br></br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis </p>
+                
+                <form action="app/php/contact-form-handler.php" method="POST" class="form">
+                    <div class = "form-group">
+                        <input type="text"  class= "form-control" id="sender-name" name="sender-name" placeholder="Your Name" tabindex="1" required>
+                    </div>
+                    <div class = "form-group">
+                        <input type="email" class= "form-control" id="email" name="email" placeholder="Your Email" tabindex="2" required>
+                    </div>
+                    <div class = "form-group">
+                        <input type="text" class= "form-control" id="subject" name="subject" placeholder="Subject" tabindex="3" required>
+                    </div>
+                    <div class = "form-group">
+                        <textarea rows="7" class = "form-control" id="message" name="message" placeholder="Leave a Message"tabindex="4" required></textarea>
+                    </div>
+                    <div class = "form-group">
+                        <input class= "submit-btn "type="submit" value="SUBMIT">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© Copyright</p>
+        <div class = media-icons>
+            <a href="https://www.instagram.com" target="_blank"> <img src="images/instagram-logo.svg" alt="instagram-logo" class="icon"></a> <!---INSTAGRAM LINK HERE-->
+            <a href="https://twitter.com" target="_blank"> <img src="images/twitter-icon.svg" alt="twitter-logo" class="icon"></a><!---TWITTER LINK HERE-->
+            <a href="https://tapas.io" target="_blank"> <img src="images/tapastic-logo.svg" alt="tapastic-logo" class="icon"></a><!---TAPAS LINK HERE-->
+            <a href="https://www.artstation.com/" target="_blank"> <img src="images/artstation-icon.svg" alt="artstation-logo" class="icon"></a><!---ARTSTATION LINK HERE-->
+        </div>
+    </footer>
+    <script src="app/js/script.js"></script>
+</body>
+</html>

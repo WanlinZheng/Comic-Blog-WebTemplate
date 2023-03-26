@@ -1,0 +1,39 @@
+.reader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(59, 59, 59) ;
+    color: white;
+}
+#pageNumber {
+    color: white;
+    font-size: 4vw;
+    margin: 2%;
+}
+#currentPage{
+    margin:auto;
+    max-width: 60vw;
+    box-shadow: 0 0 1em .5em rgb(27, 27, 27);
+}
+
+.reader-btn {
+    font-size: 4vw;
+    border:none;
+    margin:  2%1%;
+    color: white;
+    background-color: transparent;
+}
+
+.reader-btn:hover {
+    color: #58747A;
+    transition: color .5s ease-in-out;
+}
+
+/*media query for mobile devices*/
+@media screen and (max-width:767px){
+    #currentPage{
+        max-width: 85vw;
+    }
+}

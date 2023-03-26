@@ -1,0 +1,384 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body  {
+    font-family: 'Cormorant Garamond', serif;
+    background-color: #e5ddd7;
+}
+/*HEADER*/
+
+header{
+    display: flex;
+    position:sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: space-between;
+    padding: 1em;
+    height: 6em;
+    align-items: center;
+    z-index: 1;
+    background-color: #e5ddd7;
+    /* backdrop-filter: blur(7px); */
+    
+}
+
+.s-logo { /* targeting small top left logo*/
+    max-height: 4em;
+    image-rendering:crisp-edges;
+}
+
+.nav-items{ /* targeting nav */
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    font-size: 140%;
+}
+
+.nav-items li a { /* targeting nav bar list links*/
+
+    text-decoration: none;
+    color: black;
+    padding: 2em;
+    transition: color .5s ease-in-out;
+}
+.nav-items li a:hover { /* targeting pseudoelement?*/
+    color: #58747A;
+    transition: color .5s ease-in-out;
+}
+
+/* HAMBURGER MENU*/
+.menu-btn {
+    position: relative;
+    display: none; /*does not display on nonmedia query*/
+    justify-content: center;
+    align-items: center;
+    width: 2.5em;
+    height: 2.5em;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .5s ease-in-out;
+}
+.menu-btn_lines{
+    width: 2em;
+    height: .15em;
+    background: black;
+    transition: all .5s ease-in-out;
+    transform-origin: center;
+}
+.menu-btn_lines::before,
+.menu-btn_lines::after{
+    content: "";
+    position: absolute;
+    width: 2em;
+    height: .15em;
+    background: black;
+    transition: all .5s ease-in-out;
+}
+.menu-btn_lines::before{
+    transform: translateY(-.7em);
+}
+.menu-btn_lines::after{
+    transform: translateY(.7em);
+}
+.menu-btn.open .menu-btn_lines{
+    transform: rotate(405deg);
+}
+.menu-btn.open .menu-btn_lines::before{
+    transform: rotate(450deg);
+}
+.menu-btn.open .menu-btn_lines::after{
+    transform: rotate(450deg);
+}
+
+/* Banner image aka heropage? to page links*/
+.banner {
+    position: relative;
+    min-height: 35em;
+    height: 80vh;
+    background-color: #58747A;
+    background-image: url(../../images/stockBanner.jpg);/*file pathing to images folder ../ to  add 1 layer matriuska doll*/ /*STOCK BANNER GOES HERE*/
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+    display: flex; /* creates flexbox for single image (homepage logo)*/
+    justify-content: center;
+    align-items:flex-end;
+}
+.b-logo {/* targeting homepagelogo*/
+    height: 50%;
+    padding: 1em;
+
+}
+.intro p{ /* targeting intro text*/
+    font-size: 1.5em;
+    margin: 0 20%;
+}
+.button{ /* targeting page link buttons*/
+    text-decoration: none;
+    background:#58747A;
+    display: block;
+    text-align: center;
+    font-size: 1.5em ;
+    color: #e5ddd7;
+    margin: 0 auto 2em auto;
+    max-width: 10em;
+    padding: .5em;
+    border-radius: 40px;
+}
+
+/*make button fade to image of page?
+.button:hover{ 
+    background-color: #e5ddd7;
+    transition: background-color .5s ease-in-out;
+}*/
+
+/*ACCORDION SECTION*/
+.accordion{
+    margin: auto; 
+}
+
+.tab input{/*hide checkbox*/
+    display: none;
+}
+.tab label{
+    display: block;
+    background-color: #58747A ;
+    color: #e5ddd7;
+    font-size: 2em;
+    cursor: pointer;
+    padding:.5em 10%;
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+.tab label img {
+    max-height: .8em;
+    display: inline-flex;
+    margin-top: .1em;
+    float: right;
+    transition: all 0.5s;
+  }
+.tab input:checked ~ label img {
+    transform: rotate(90deg);
+}
+  
+.tab label:hover{ /* colour change when mouse overtop*/
+    background-color: #283F3F;
+}
+
+.tab .tab-content{
+    background-color: #F2EEEB;
+    overflow: hidden;
+    padding: 0 10%;
+    transition: all .5s ease-in-out;
+    max-height: 0; 
+}
+
+.tab input:checked ~ .tab-content {
+    max-height: 300vh; /*arbitrary large size, must be better wayyy?*/
+}
+.tab input:checked ~ label{/* colour change when open*/
+    background-color: #283F3F;
+}
+/* FIRST TAB ADJUSTMENTS*/
+
+.tab:first-child .tab-content {
+    display: flex;
+    justify-content:space-between;
+    gap: 2em;
+    font-size: 1.5em;
+}
+.tab:first-child .tab-content h2, p{ /* THIS solitary 'p' messed everything up and will cause pain in the future*/
+    align-self: center;
+    padding: 2em 0;
+}
+
+/*SECOND TAB ADJUSTMENTS*/
+
+.tab:nth-child(2) .tab-content {
+    display: grid;
+
+}
+.tab:nth-child(2) .tab-content .character-info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: auto;
+    padding: 4em 0 0 0;
+}
+.tab:nth-child(2) .tab-content .character-info img{
+    height: 30vw;
+    max-height: 35em;
+}
+.tab:nth-child(2) .tab-content .character-info:nth-child(2) img{ /* targeting 2nd character to align*/
+    margin: auto 0 auto auto;
+}    
+.tab:nth-child(2) .tab-content .character-info .character-info-text{
+    margin: auto;
+    padding: 2em;
+    height: 30vw;
+    font-size: 1.5vw;
+    background-color: white;
+}
+.tab:nth-child(2) .tab-content .character-info:nth-last-child(1){ /*targeting last character*/
+    padding-bottom: 4em;
+}
+/*THIRD TAB ADJUSTMENTS*/
+.tab:nth-child(3) .tab-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tab:nth-child(3) .tab-content form input{
+    display:inherit;/* redisplays input for this tab contents only*/
+}
+.form-group{
+    margin: 1em auto;
+}
+.form-group:first-child{
+    margin-top: 0; /*get rid of that extra space*/
+}
+.form-control{
+    width: 50vw;
+    min-width: 25em;
+    padding: 1em;
+    border: 2px solid #e9eaea;
+    font-size: 14px;
+    border-radius: none;
+    outline: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.form-control:focus{
+    border-color: #283F3F;
+}
+.submit-btn {
+    background-color: #58747A;
+    text-align: center;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    width: 25%;
+    min-width: 5em;
+    margin: auto;
+    padding: 1em;
+    border: solid #e9eaea ;
+}
+
+.submit-btn:hover{
+    border-color: #283F3F;
+}
+
+textarea{
+    resize: none;
+}
+
+/*FOOTER*/
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em;
+    
+}
+footer .media-icons{
+    position: absolute;
+    right: 5%;
+}
+.icon{
+    width: 2.5em;
+    
+}
+/*media query for tablet devices*/
+@media screen and (max-width:1024px){
+
+}
+/*media query for mobile devices*/
+@media screen and (max-width:767px){
+    header {
+        height: 4em;
+        background-color: inherit;
+    }
+    .menu-btn{
+        display: flex;
+    }
+    .s-logo{
+        height: 3em;
+    }
+    .banner{
+        height: 40vh;
+        min-height: 20em;
+        background-size: cover;
+    }
+    .nav-items{
+     flex-direction: column;
+     justify-content: center;
+     position: absolute;
+     top: 0;
+     right: 0;
+     left: 0;
+     height: 100vh;
+     background-color: #e5ddd7;
+     transform-origin: top right;
+     transform: scale(0%);
+     transition: all .5s ease-in-out;
+     border-radius: 50%;
+    }
+    .nav-items.open { /* java open class to animate nav bar*/
+        transform: scale(100%);
+        border-radius: inherit;
+    }
+    .nav-items li { /* targeting nav bar list links*/
+        padding: 0;
+        margin: 5%;
+
+    }
+    .intro p, .panel p{
+        font-size: 1em;
+        padding: 1em 0;
+    }
+    .button{
+        margin: 0 auto 1em auto;
+        font-size: 1em;
+    }
+
+    /*ACCORDION*/
+    .tab label{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .tab:first-child .tab-content {
+        display: inherit;
+        font-size: 1em;
+    }
+    .tab:first-child .tab-content h2{
+        padding: 1em 0 0 0 ;
+    }
+    .tab:first-child .tab-content p{
+        padding: 1em 0 2em 0;
+    }
+    .tab:nth-child(2) .tab-content .character-info{
+        padding: 2em 0 0 00; 
+    }
+    .tab:nth-child(2) .tab-content .character-info img{
+        height: 45vw;
+    }
+    .tab:nth-child(2) .tab-content .character-info .character-info-text{
+        padding:2em;
+        height: 45vw;
+        font-size: 2vw;
+    }
+
+    /*FOOTER*/
+    footer .media-icons{
+        position: inherit;
+        right: inherit
+    }
+    footer{
+        flex-direction: column;
+    }
+}
